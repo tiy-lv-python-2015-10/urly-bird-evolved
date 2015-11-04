@@ -42,6 +42,7 @@ options to filter the links by
   * Most popular in the past day
   * Most popular in the last week
   * Most popular ever
+ * Get a new theme for the django admin
 
 ## Nightmare Mode
 * Don't use bootstrap
