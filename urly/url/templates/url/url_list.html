@@ -1,0 +1,25 @@
+{% extends 'url/url_base.html' %}
+
+{% block title %}Url List{% endblock %}
+
+{% block content %}
+    <h2>Url List</h2>
+
+    <ul>
+        {% for url in url_list %}
+            <li>{{ url.author.username }} posted <a href="{% url 'url_detail' url.id %}">"{{ url.message }}"</a>
+                at {{ url.posted_at }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a href="{% url 'list_urls' %}?page={{ page_obj.previous_page_number }}"><-Prev</a>
+        {% endif %}
+        {{ page_obj }}
+        {% if page_obj.has_next %}
+            <a href="{% url 'list_urls' %}?page={{ page_obj.next_page_number }}">Next -></a>
+        {% endif %}
+
+    {% endif %}
+{% endblock %}
