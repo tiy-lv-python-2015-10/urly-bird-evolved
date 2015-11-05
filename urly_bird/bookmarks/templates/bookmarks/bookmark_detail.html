@@ -1,0 +1,19 @@
+
+{% extends 'users/base.html' %}
+
+{% block content %}
+    <h2>Bookmark Detail</h2>
+
+    <ul>
+        <li>Title: {{ bookmark.title }}</li>
+        <li>Message: {{ bookmark.description }}</li>
+        <li>Author: {{ bookmark.user.username }}</li>
+        <li>Posted at: {{ bookmark.timestamp }}</li>
+        <li>URL: {{ bookmark.bookmark_url }}</li>
+    </ul>
+    {% if user.is_authenticated %}
+        <p><a class="btn btn-primary btn-block" href="{% url 'bookmark_edit' bookmark.id %}" role="button" style="display: inline-block;">Edit</a></p>
+        <p><a class="btn btn-danger btn-block" href="{% url 'bookmark_delete' bookmark.id %}" role="button" style="display: inline-block;">Delete</a></p>
+    {% endif %}
+
+{% endblock %}

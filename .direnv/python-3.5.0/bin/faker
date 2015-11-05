@@ -1,0 +1,7 @@
+#!/Users/cesar/sandbox/homework/django_hw/urly-bird-evolved/.direnv/python-3.5.0/bin/python3.5
+# coding=utf-8
+
+from faker.cli import execute_from_command_line
+
+if __name__ == '__main__':
+    execute_from_command_line()

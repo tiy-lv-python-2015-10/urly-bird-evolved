@@ -1,0 +1,15 @@
+
+
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+   <h2>Login</h2>
+   <form method="post" action="{% url 'login' %}">
+       {% csrf_token %}
+       <input type="hidden" name="next" value="{{ next }}">
+       {%  form %}
+       <input type="submit" value="Login"><a href="registration.html" class="btn">Register</a>
+   </form>
+
+{% endblock %}
