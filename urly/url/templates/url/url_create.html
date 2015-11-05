@@ -1,0 +1,18 @@
+{% extends 'url/url_base.html' %}
+
+{% block content %}
+    <h2>Create Url</h2>
+    <!-- Django does not provide the form tag -->
+    <form method="post" action="{% url 'url_create' %}" class="form">
+        <!-- CSRF Token prevents cross site attacks and is required -->
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+            {{ field.errors }}
+            {{ field.label_tag }}{{ field }}
+            </div>
+        {% endfor %}
+        <!-- Django does not insert a submit button -->
+        <input type="submit" value="Url!" name="submit" class="btn btn-primary">
+    </form>
+{% endblock %}

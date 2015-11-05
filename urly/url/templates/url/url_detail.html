@@ -1,0 +1,18 @@
+{% extends 'url/url_base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <h2>Url Detail</h2>
+
+    <ul>
+        <li>Title: {{ url.title }}</li>
+        <li>Message: {{ url.message }}</li>
+        <li>Author: {{ url.author.username }}</li>
+        <li>Posted at: {{ url.posted_at }}</li>
+    </ul>
+
+    <p>
+    <img src="{% static 'images/IMG_JP.JPG' %}">
+    </p>
+{% endblock %}
