@@ -1,0 +1,26 @@
+{% extends 'urly_bird/urly_bird_base.html' %}
+
+{% block content %}
+    <h4>show bookmark creator's name here</h4>
+    <ul class="list-unstyled bookmarks">
+        {% for bookmark in bookmarks %}
+        <li class="li_bookmark"><a href="{% url 'bookmark_detail' bookmark.id %}" class="bm-title">{{ bookmark.title }} </a>
+            <ul>
+                <li>Number of Clicks: {{ bookmark.num_clicks }}</li>
+                <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">{{ bookmark.short_id }}</a></li>
+                <li>Created at: {{ bookmark.created_at }}</li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <br>
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+        <a href="{% url 'list_bookmarks' %}?page={{ page_obj.previous_page_number }}"><-Prev</a>
+    {% endif %}
+    {{ page_obj }}
+    {% if page_obj.has_next %}
+        <a href="{% url 'list_bookmarks' %}?page={{ page_obj.next_page_number }}">Next -></a>
+    {% endif %}
+    {% endif %}
+{% endblock %}

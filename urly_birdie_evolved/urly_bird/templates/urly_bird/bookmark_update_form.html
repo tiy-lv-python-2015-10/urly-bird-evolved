@@ -1,0 +1,10 @@
+{% extends 'urly_bird/urly_bird_base.html' %}
+
+{% block content %}
+    <h2>Update bookmark</h2>
+    <form method="post" action="{% url 'bookmark_update' bookmark.id %}" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update!" name="submit" class="btn btn-primary">
+    </form>
+{% endblock %}

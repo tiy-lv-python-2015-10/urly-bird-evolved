@@ -1,0 +1,17 @@
+{% extends 'urly_bird/urly_bird_base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-7">
+            <h3>Paste your long URL below and give it a title.</h3>
+            <br>
+            <p>Enter a url you would like shortened, and we'll create a hash for you.</p>
+            <form method="post" action="{% url 'bookmark_create' %}" class="urly-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Bookmark!" name="submit">
+            </form>
+        </div>
+        <div class="col-md-5"></div>
+    </div><!-- end row -->
+{% endblock %}
