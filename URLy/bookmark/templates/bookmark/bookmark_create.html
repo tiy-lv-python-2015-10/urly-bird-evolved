@@ -1,0 +1,13 @@
+{% extends 'bookmark/URLy_base.html' %}
+{% load staticfiles %}
+
+{% block title %}Bookmark Create{% endblock %}
+
+{% block content %}
+    <h2>Create Bookmark</h2>
+    <form method="post" action="{% url 'bookmark_create' %}" class="form">
+        {% csrf_token %}
+        {% form %}
+        <input type="submit" value="Submit" name="submit" class="btn btn-primary">
+    </form>
+{% endblock %}

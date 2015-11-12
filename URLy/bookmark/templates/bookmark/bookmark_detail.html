@@ -1,0 +1,17 @@
+{% extends 'bookmark/URLy_base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h2>Chirp Detail</h2>
+
+    <ul>
+        <li>Title: {{ bookmark.title }}</li>
+        <li>Message: {{ bookmark.description }}</li>
+        <li>User: {{ bookmark.user.username }}</li>
+        <li>Link: <a href="{% url 'link' bookmark.short_link %}">{{ bookmark.short_link }}</a> </li>
+        <li>Posted at: {{ bookmark.timestamp }}</li>
+    </ul>
+
+{% endblock %}
+
+{#<a href={{ bookmark.link }} class="button">{{ bookmark.short_link }}</a>#}

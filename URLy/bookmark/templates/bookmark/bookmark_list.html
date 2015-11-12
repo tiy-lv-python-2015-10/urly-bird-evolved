@@ -1,0 +1,25 @@
+{% extends 'bookmark/URLy_base.html' %}
+{% load staticfiles %}
+
+{% block title %}Bookmark List{% endblock %}
+
+{% block content %}
+    <h2>Bookmark List</h2>
+
+    <ul>
+        {% for bookmark in bookmark_list %}
+            <li>{{ bookmark.user.username }} posted <a href="{% url 'bookmark_detail' bookmark.id %}">
+                "{{ bookmark.title }}"</a> at {{ bookmark.timestamp }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a href="{% url 'list_bookmark' %}?page={{ page_obj.previous_page_number }}"><-Prev</a>
+        {% endif %}
+        {{ page_obj }}
+        {% if page_obj.has_next %}
+            <a href="{% url 'list_bookmark' %}?page={{ page_obj.next_page_number }}">Next -></a>
+        {% endif %}
+    {% endif %}
+{% endblock %}
