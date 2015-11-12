@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URLy Register</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% for field in form %}
+            <div>
+                {{ field.errors }}
+                {{ field.label_tag }}{{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" value='Register' class="btn btn-default">Register</button>
+    </form>
+    <picture>
+        <img src="{% static "images/register.jpg" %}">
+    </picture>
+</body>
+</html>

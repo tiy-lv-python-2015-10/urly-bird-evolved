@@ -1,0 +1,11 @@
+{% extends 'bookmark/URLy_base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+    <form action="{% url 'delete_bookmark' bookmark.id %} }" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        <input type="submit" value="Confirm"/>
+    </form>
+{% endblock %}
