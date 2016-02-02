@@ -7,7 +7,7 @@
     <ul>
         <li><strong>{{ bookmark.title }}</strong></li>
         <li>Created by: <a href="{% url 'any_list' bookmark.human.username %}">{{ bookmark.human }}</a></li>
-        <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">www.localhost:8000/z/{{ bookmark.short_id }}</a></li>
+        <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">urly-birdie.herokuapp.com//z/{{ bookmark.short_id }}</a></li>
         <li>Created at: {{ bookmark.created_at }}</li>
         <li>Description: {{ bookmark.description }}</li>
     </ul>

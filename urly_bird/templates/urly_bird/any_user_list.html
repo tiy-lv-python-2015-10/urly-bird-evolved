@@ -8,7 +8,7 @@
         <li class="li_bookmark"><a href="{% url 'bookmark_detail' bookmark.id %}" class="bm-title">{{ bookmark.title }} </a>
             <ul>
                 <li>Number of Clicks: {{ bookmark.num_clicks }}</li>
-                <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">{{ bookmark.short_id }}</a></li>
+                <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">urly-birdie.herokuapp.com//z/{{ bookmark.short_id }}</a></li>
                 <li>Created at: {{ bookmark.created_at }}</li>
             </ul>
         </li>
