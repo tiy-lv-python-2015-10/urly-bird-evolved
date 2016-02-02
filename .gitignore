@@ -9,7 +9,6 @@ __pycache__
 *.name
 *glyphicons*
 *migrations*
-*bootstrap*
 
 
 # Created by https://www.gitignore.io
