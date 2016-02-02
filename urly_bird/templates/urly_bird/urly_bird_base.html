@@ -15,14 +15,14 @@
             <div class="col-md-2">
                 <a href="{% url "list_bookmarks" %}"><img width="120" height="60" src="{% static "images/urlybird-logo-black.png" %}"></a>
             </div>
-        <div class="col-md-5 head3">
-                <ul class="nav nav-tabs">
-                    <li role="presentation"><a href="{% url 'list_bookmarks' %}">Home</a></li>
-                    <li role="presentation"><a href="{% url 'user_list' %}">Profile</a></li>
-                    <li role="presentation"><a href="{% url 'bookmark_create' %}">Create</a></li>
-                    <li role="presentation"><a href="{% url 'user_list' %}">Your URL's</a></li>
-                </ul>
-        </div>
+            <div class="col-md-5 head3">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="{% url 'list_bookmarks' %}">Home</a></li>
+                        <li role="presentation"><a href="{% url 'user_list' %}">Profile</a></li>
+                        <li role="presentation"><a href="{% url 'bookmark_create' %}">Create</a></li>
+                        <li role="presentation"><a href="{% url 'user_list' %}">Your URL's</a></li>
+                    </ul>
+            </div>
         {% if user.is_authenticated %}
 {#            <div class="col-md-1"></div>#}
             <div class="col-md-3 head3" id="head3">

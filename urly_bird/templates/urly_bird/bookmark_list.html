@@ -14,7 +14,7 @@
                     <a class="bm-title" href="{% url 'bookmark_detail' bookmark.id %}">{{ bookmark.title }} </a>
                     <ul>
                         <li>Number of Clicks: {{ bookmark.num_clicks }}</li>
-                        <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">{{ bookmark.short_id }}</a></li>
+                        <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">www.localhost:8000/z/{{ bookmark.short_id }}</a></li>
                         <li>Created by: <strong><a href="{% url 'any_list' bookmark.human.username %}">{{ bookmark.human }}</a></strong></li>
                     </ul>
                 </li>
@@ -35,26 +35,26 @@
         <div class="col-md-5 topp">
             <!-- BOOTSTRAP FORM FROM SITE -->
             <!--                          -->
-            {% if user.is_authenticated %}
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Paste your long URL here</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="URL (This form visual only)">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Title</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Title (Please click Create above to create)">
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Add description
-                </label>
-              </div>
-              <button type="submit" class="btn btn-default btn-primary">Create</button>
-            </form>
-            {% else %}
-                <h4>Please <a href="{% url 'login' %}">login</a> to create a bookmark.</h4>
-            {% endif %}
+{#            {% if user.is_authenticated %}#}
+{#            <form>#}
+{#              <div class="form-group">#}
+{#                <label for="exampleInputEmail1">Paste your long URL here</label>#}
+{#                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="URL">#}
+{#              </div>#}
+{#              <div class="form-group">#}
+{#                <label for="exampleInputPassword1">Title</label>#}
+{#                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Title">#}
+{#              </div>#}
+{#              <div class="checkbox">#}
+{#                <label>#}
+{#                  <input type="checkbox"> Add description#}
+{#                </label>#}
+{#              </div>#}
+{#              <button type="submit" class="btn btn-default btn-primary">Create</button>#}
+{#            </form>#}
+{#            {% else %}#}
+{#                <h4>Please <a href="{% url 'login' %}">login</a> to create a bookmark.</h4>#}
+{#            {% endif %}#}
 
 
         </div>
