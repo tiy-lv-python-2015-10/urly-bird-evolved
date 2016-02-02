@@ -14,7 +14,7 @@
                     <a class="bm-title" href="{% url 'bookmark_detail' bookmark.id %}">{{ bookmark.title }} </a>
                     <ul>
                         <li>Number of Clicks: {{ bookmark.num_clicks }}</li>
-                        <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">urly-birdie.herokuapp.com//z/{{ bookmark.short_id }}</a></li>
+                        <li><a href="{% url 'link' bookmark.short_id %}">urly-birdie.herokuapp.com//z/{{ bookmark.short_id }}</a></li>
                         <li>Created by: <strong><a href="{% url 'any_list' bookmark.human.username %}">{{ bookmark.human }}</a></strong></li>
                     </ul>
                 </li>

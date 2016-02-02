@@ -14,7 +14,7 @@
                 <li><a href="{% url 'bookmark_update' bookmark.id %}">UPDATE</a>
                     <a href="{% url 'bookmark_delete' bookmark.id %}">DELETE</a></li>
                 <li>Number of Clicks: {{ bookmark.num_clicks }}</li>
-                <li>Shortcut Hash: <a href="{% url 'link' bookmark.short_id %}">urly-birdie.herokuapp.com//z/{{ bookmark.short_id }}</a></li>
+                <li><a href="{% url 'link' bookmark.short_id %}">urly-birdie.herokuapp.com//z/{{ bookmark.short_id }}</a></li>
                 <li>Created at: {{ bookmark.created_at }}</li>
             </ul>
         </li>
