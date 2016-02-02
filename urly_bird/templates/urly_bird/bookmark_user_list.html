@@ -1,4 +1,6 @@
 {% extends 'urly_bird/urly_bird_base.html' %}
+{% load staticfiles %}
+
 {% block content %}
     <h2>Your Bookmarks</h2>
     {% if not user.is_authenticated %}
