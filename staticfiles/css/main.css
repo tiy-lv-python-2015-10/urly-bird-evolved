@@ -1,0 +1,35 @@
+.head3 {
+    padding-top: 10px;
+}
+
+#head3 p {
+    margin: 0;
+}
+
+.topp {
+    padding-top: 40px;
+}
+
+.bookmarks {
+    padding-top: 10px;
+}
+
+.bookmarks li {
+    list-style: none;
+}
+
+.bm-title {
+    font-size: 20px;
+}
+
+.li_bookmark {
+    padding-bottom: 10px;
+}
+
+/*.blue-button {*/
+    /*background-color: #269abc;*/
+/*}*/
+
+.urly-form {
+
+}

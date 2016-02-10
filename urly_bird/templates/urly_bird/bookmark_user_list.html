@@ -1,0 +1,33 @@
+{% extends 'urly_bird/urly_bird_base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h2>Your Bookmarks</h2>
+    {% if not user.is_authenticated %}
+    <p>You aren't logged in.</p>
+    {% endif %}
+    <ul class="list-unstyled bookmarks">
+        {% for bookmark in bookmark_list %}
+        <li class="li_bookmark">
+            <a class="bm-title" href="{% url 'bookmark_detail' bookmark.id %}">{{ bookmark.title }}</a>
+            <ul>
+                <li><a href="{% url 'bookmark_update' bookmark.id %}">UPDATE</a>
+                    <a href="{% url 'bookmark_delete' bookmark.id %}">DELETE</a></li>
+                <li>Number of Clicks: {{ bookmark.num_clicks }}</li>
+                <li><a href="{% url 'link' bookmark.short_id %}">urly-birdie.herokuapp.com//z/{{ bookmark.short_id }}</a></li>
+                <li>Created at: {{ bookmark.created_at }}</li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <br>
+    {% if is_paginated %}
+    {% if page_obj.has_previous %}
+        <a href="{% url 'user_list' %}?page={{ page_obj.previous_page_number }}"><-Prev</a>
+    {% endif %}
+    {{ page_obj }}
+    {% if page_obj.has_next %}
+        <a href="{% url 'user_list' %}?page={{ page_obj.next_page_number }}">Next -></a>
+    {% endif %}
+    {% endif %}
+{% endblock %}
